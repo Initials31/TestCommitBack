@@ -20,8 +20,8 @@ public class PlayerServiceImpl implements PlayerService {
 		this.playerDao = playerDao;
 	}
 
-	@Transactional
 	@Override
+	@Transactional
 	public Player create(Player p) {
 		Player player = playerDao.create(p);
 		return player;
@@ -44,6 +44,7 @@ public class PlayerServiceImpl implements PlayerService {
 	}
 
 	@Override
+	@Transactional
 	public void delete(long id) {
 		playerDao.delete(id);
 		

@@ -6,9 +6,12 @@ import com.apside.prono.model.Player;
 
 public interface PlayerDao {
 	
-	Player getById(long id);
 	Player create(Player p);
+	
 	List<Player> getAllPlayers();
+	
+	Player getById(long id);
+	
 	void delete(long id);
 
 }

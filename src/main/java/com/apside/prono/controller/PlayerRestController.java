@@ -23,13 +23,6 @@ public class PlayerRestController {
 	@Autowired
 	private PlayerService playerService;
 	
-	@PostMapping(consumes = "application/json", produces = "application/json", path = "/api/creerPlayer")
-	public ResponseEntity<Player> create(@RequestBody Player p) {
-		Player player = playerService.create(p);
-		return ResponseEntity.ok().body(player);	
-	}
-	
-
 	@GetMapping(produces = "application/json", path = "/api/players")
 	public ResponseEntity<List<Player>> getAllPlayers() {	
 		List<Player> players = playerService.getAllPlayers();
@@ -41,6 +34,16 @@ public class PlayerRestController {
 		Player player = playerService.getById(id);
 		return ResponseEntity.ok().body(player);
 	}
+	
+	
+	@PostMapping(consumes = "application/json", produces = "application/json", path = "/api/creerPlayer")
+	public ResponseEntity<Player> create(@RequestBody Player p) {
+		Player player = playerService.create(p);
+		return ResponseEntity.ok().body(player);	
+	}
+	
+	
+	
 	
 	@DeleteMapping("/api/player/{id}")
 	public void deletePlayer(@PathVariable long id) {
