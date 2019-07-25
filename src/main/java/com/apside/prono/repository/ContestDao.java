@@ -12,4 +12,6 @@ public interface ContestDao {
 
 	Contest getContestById(long id);
 
+	void deleteContest(long id);
+
 }

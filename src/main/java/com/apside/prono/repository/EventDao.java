@@ -12,4 +12,6 @@ public interface EventDao {
 
 	Event getEventById(long id);
 
+	void deleteEvent(long id);
+
 }

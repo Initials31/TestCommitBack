@@ -12,4 +12,8 @@ public interface ContestService {
 
 	Contest getContestById(long id);
 
+	Contest update(Contest c);
+
+	void deleteContest(long id);
+
 }

@@ -40,7 +40,7 @@ public class PlayerDaoImpl implements PlayerDao {
 	}
 
 	@Override
-	public void delete(long id) {
+	public void deletePlayer(long id) {
 		this.em.createQuery("delete from Player p where p.id = :id")
 		.setParameter("id", id)
 		.executeUpdate();

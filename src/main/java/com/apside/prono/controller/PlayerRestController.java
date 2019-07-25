@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -25,7 +26,7 @@ public class PlayerRestController {
 	@Autowired
 	private PlayerService playerService;
 	
-	@GetMapping(produces = "application/json", path = "/api/players")
+	@GetMapping(produces = "application/json", path = "/api/player")
 	public ResponseEntity<List<Player>> getAllPlayers() {	
 		List<Player> players = playerService.getAllPlayers();
 		return ResponseEntity.ok().body(players);
@@ -45,10 +46,14 @@ public class PlayerRestController {
 	}
 	
 	
+	@PutMapping(consumes = "application/json", produces = "application/json", path = "/api/player")
+	public Player update(@RequestBody Player p) {
+		return playerService.update(p);
+	}
 	
 	
 	@DeleteMapping("/api/player/{id}")
 	public void deletePlayer(@PathVariable long id) {
-		playerService.delete(id);
+		playerService.deletePlayer(id);
 	}
 }

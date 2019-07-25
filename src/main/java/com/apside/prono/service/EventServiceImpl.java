@@ -36,5 +36,23 @@ public class EventServiceImpl implements EventService {
 		Event event = eventDao.getEventById(id);
 		return event;
 	}
+	
+	@Override
+	@Transactional
+	public Event update(Event e) {
+		Event event = eventDao.getEventById(e.getId());
+		event.setLabel(e.getLabel());
+		event.setEventDate(e.getEventDate());
+		event.setOpenDate(e.getOpenDate());
+		event.setCloseDate(e.getCloseDate());
+		event.setCoeff(e.getCoeff());
+		return event;
+	}
+	
+	@Override
+	@Transactional
+	public void deleteEvent(long id) {
+		eventDao.deleteEvent(id);
+	}
 
 }

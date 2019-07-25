@@ -12,7 +12,9 @@ public interface PlayerService {
 	List<Player> getAllPlayers();
 	
 	Player getById(long id) throws PlayerInconnuException;
-	
-	void delete(long id);
+
+	Player update(Player p);
+
+	void deletePlayer(long id);
 
 }

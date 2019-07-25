@@ -36,6 +36,21 @@ private ContestDao contestDao;
 		Contest contest = contestDao.getContestById(id);
 		return contest;
 	}
+	
+	@Override
+	@Transactional
+	public Contest update(Contest c) {
+		Contest contest = contestDao.getContestById(c.getId());
+		contest.setLabel(c.getLabel());
+		return contest;
+	}
+	
+	@Override
+	@Transactional
+	public void deleteContest(long id) {
+		contestDao.deleteContest(id);
+	}
+
 
 
 }

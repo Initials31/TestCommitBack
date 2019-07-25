@@ -39,5 +39,12 @@ public class ContestDaoImpl implements ContestDao {
 		return this.em.find(Contest.class, id);
 	}
 	
+	@Override
+	public void deleteContest(long id) {
+		this.em.createQuery("delete from Contest c where c.id = :id")
+		.setParameter("id", id)
+		.executeUpdate();
+	}
+	
 
 }

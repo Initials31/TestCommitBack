@@ -27,7 +27,6 @@ public class PlayerServiceImpl implements PlayerService {
 		return player;
 	}
 	
-	
 	@Override
 	public List<Player> getAllPlayers() {
 		List<Player> players = playerDao.getAllPlayers();
@@ -42,12 +41,22 @@ public class PlayerServiceImpl implements PlayerService {
 		}
 		return player;
 	}
+	
+	@Override
+	@Transactional
+	public Player update(Player p) {
+		Player player = playerDao.getById(p.getId());
+		player.setFirstName(p.getFirstName());
+		player.setLastName(p.getLastName());
+		player.setMail(p.getMail());
+		player.setSubscriptionDate(p.getSubscriptionDate());
+		return player;
+	}
 
 	@Override
 	@Transactional
-	public void delete(long id) {
-		playerDao.delete(id);
-		
+	public void deletePlayer(long id) {
+		playerDao.deletePlayer(id);
 	}
 	
 

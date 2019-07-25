@@ -39,7 +39,12 @@ public class EventDaoImpl implements EventDao {
 		return this.em.find(Event.class, id);
 	}
 	
-	
+	@Override
+	public void deleteEvent(long id) {
+		this.em.createQuery("delete from Event e where e.id = :id")
+		.setParameter("id", id)
+		.executeUpdate();
+	}
 	
 	
 
