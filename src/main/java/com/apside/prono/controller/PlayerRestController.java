@@ -37,7 +37,6 @@ public class PlayerRestController {
 		return ResponseEntity.ok().body(player);
 	}
 	
-	
 	@PostMapping(consumes = "application/json", produces = "application/json", path = "/api/player")
 	public ResponseEntity<Player> create(@RequestBody Player p, UriComponentsBuilder uriBuilder) {
 		playerService.create(p);

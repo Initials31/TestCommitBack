@@ -21,7 +21,6 @@ public class PlayerDaoImpl implements PlayerDao {
 	public PlayerDaoImpl(EntityManager em) {
 		this.em = em;
 	}
-
 	
 	@Override
 	public Player create(Player p) {

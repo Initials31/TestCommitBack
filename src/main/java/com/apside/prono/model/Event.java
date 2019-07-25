@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import com.apside.prono.model.Contest;
 
 
+
 @Entity
 public class Event {
 	
