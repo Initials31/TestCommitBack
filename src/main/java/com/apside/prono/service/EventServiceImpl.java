@@ -3,11 +3,13 @@ package com.apside.prono.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.apside.prono.model.Event;
 import com.apside.prono.repository.EventDao;
 
+@Service
 public class EventServiceImpl implements EventService {
 	
 	private EventDao eventDao;

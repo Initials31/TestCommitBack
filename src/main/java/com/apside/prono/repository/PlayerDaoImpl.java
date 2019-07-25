@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import com.apside.prono.model.Player;
 
-
 @Repository
 public class PlayerDaoImpl implements PlayerDao {
 	

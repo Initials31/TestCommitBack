@@ -6,11 +6,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.ManyToOne;
+
+import com.apside.prono.model.Contest;
+
 
 @Entity
-@Table(name = "event")
 public class Event {
 	
 	@Id
@@ -23,9 +24,8 @@ public class Event {
 	private Date closeDate;
 	private double coeff;
 	
-	@OneToOne
-	private int idContest;
-	
+	@ManyToOne
+	private Contest contest;
 	
 	public long getId() {
 		return id;
@@ -63,11 +63,11 @@ public class Event {
 	public void setCoeff(double coeff) {
 		this.coeff = coeff;
 	}
-	public int getIdContest() {
-		return idContest;
+	public Contest getContest() {
+		return contest;
 	}
-	public void setIdContest(int idContest) {
-		this.idContest = idContest;
+	public void setContest(Contest contest) {
+		this.contest = contest;
 	}
 	
 	

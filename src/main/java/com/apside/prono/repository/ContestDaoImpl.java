@@ -5,8 +5,11 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Repository;
+
 import com.apside.prono.model.Contest;
 
+@Repository
 public class ContestDaoImpl implements ContestDao {
 	
 	@PersistenceContext
