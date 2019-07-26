@@ -50,5 +50,13 @@ public class Player {
 	public void setSubscriptionDate(Date subscriptionDate) {
 		this.subscriptionDate = subscriptionDate;
 	}
+	public Player(long id, String firstName, String lastName, String mail, Date subscriptionDate) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mail = mail;
+		this.subscriptionDate = subscriptionDate;
+	}
 
 }
